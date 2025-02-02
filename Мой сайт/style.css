@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+body {
+  margin: 0;
+  font-family: "Jost", serif;
+  }
+  .logo {
+    
+    cursor: pointer;
+    max-width: 100%;
+    max-width: 130px;
+  }
+  .navbar {
+    position: fixed;
+    height: 75px;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+  }
+  .navbar a {
+    font-size: 32px;
+    display: inline-block;
+    padding:0 15px ;
+    color: #ffffff; 
+    line-height: 1.5;
+    text-decoration: none; 
+    cursor: pointer;
+  }
+  .navbar a:after {
+    background-color: #ff2d2d; 
+    display: block;
+    content: "";
+    height: 2px; 
+    width: 0%;
+    -webkit-transition: width .3s ease-in-out;
+    -moz--transition: width .3s ease-in-out;
+    transition: width .3s ease-in-out;
+  }
+  .navbar a:hover:after{
+    width: 100%;
+  }
+  .mobile-navmenu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 50%;
+    height: 100vh;
+    background: #0000009e;
+    padding-top: 60px;
+    transition: right 0.3s ease-in-out;
+  }
+  
+  .mobile-navmenu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .mobile-navmenu ul a {
+    text-decoration: none;
+  }
+  .mobile-navmenu li {
+    font-size: 2em;
+    text-align: end;
+    padding:10px 30px ;
+    color: #ffffff; 
+    line-height: 1.5;
+    text-decoration: none; 
+    cursor: pointer;
+    position: relative;
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+  }
+  .mobile-navmenu li:after {
+    background-color: #ffffff; 
+    display: block;
+    content: "";
+    height:2.5px;
+    width: 100%;
+    transform: scaleX(0); 
+    transform-origin: right;
+    transition: transform 0.3s ease-in-out;
+  }
+  .mobile-navmenu li:hover:after{
+    transform: scaleX(1);
+  }
+  .menu-icon {
+    display: none;
+    position: fixed;
+    top: 10px;
+    right: 30px;
+    font-size: 36px;
+    cursor: pointer;
+    z-index: 1002;
+    text-decoration: none;
+    color: #ffffff;
+  }
+  .close-icon {
+    position: absolute;
+    top: 7px;
+    right: 27.5px;
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    display: none;
+    cursor: pointer;
+}
+.mobile-navmenu.active ~ .menu-icon {
+  display: none;
+}
+
+.mobile-navmenu.active {
+  right: 0;
+}
+.content {
+  background:#fffdfd8d ;
+}
+.content{
+  background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("img/nature.jpg") no-repeat center center;
+  background-size:cover;
+  width: 100%;
+  height: 100vh;
+}
+
+
+
+
+
+
+@media (max-width:800px) {
+  .content {
+    height: 700px;
+  }
+    .navbar {
+      display: none;
+    }
+    .menu-icon {
+      display: block;
+    }
+    .mobile-navmenu{
+      display: block;
+    }
+    .close-icon {
+      display: block;
+    }
+}
